@@ -1,0 +1,2 @@
+rootProject.name = "FreeToPlayGames"
+include ':app'

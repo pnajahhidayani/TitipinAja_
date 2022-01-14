@@ -1,0 +1,197 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/game_details_background"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/GameImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/test_pic" />
+
+        <TextView
+            android:id="@+id/GameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Dauntless"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GameImage" />
+
+        <TextView
+            android:id="@+id/s_developer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Developer"
+            android:textColor="@color/dark_blue"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GameShortDescription" />
+
+        <TextView
+            android:id="@+id/GameDeveloper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:text="TPhoenix Labs, Iron Galaxy"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/s_developer"
+            app:layout_constraintTop_toBottomOf="@+id/GameShortDescription" />
+
+        <TextView
+            android:id="@+id/s_publisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Publisher"
+            android:textColor="@color/dark_blue"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_developer" />
+
+        <TextView
+            android:id="@+id/GamePublisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Phoenix Labs"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/GameDeveloper"
+            app:layout_constraintTop_toBottomOf="@+id/GameDeveloper" />
+
+        <TextView
+            android:id="@+id/s_releasedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Release Date"
+            android:textColor="@color/dark_blue"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_publisher" />
+
+        <TextView
+            android:id="@+id/GameReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="2019-05-21"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/GamePublisher"
+            app:layout_constraintTop_toBottomOf="@+id/GamePublisher" />
+
+        <TextView
+            android:id="@+id/GameShortDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="left"
+            android:text="A free-to-play, co-op action RPG with gameplay similar to Monster Hunter."
+            android:textColor="@color/white"
+            android:textSize="25dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
+
+        <TextView
+            android:id="@+id/s_platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Platfrom"
+            android:textColor="@color/teal_200"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_releasedate" />
+
+        <TextView
+            android:id="@+id/GamePlatform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="PC (Windows)"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/GameReleaseDate"
+            app:layout_constraintTop_toBottomOf="@+id/GameReleaseDate" />
+
+        <TextView
+            android:id="@+id/s_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Genre"
+            android:textColor="@color/teal_200"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_platform" />
+
+        <TextView
+            android:id="@+id/GameGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="MMORPG"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/GamePlatform"
+            app:layout_constraintTop_toBottomOf="@+id/GamePlatform" />
+
+        <ImageButton
+            android:id="@+id/OpenBrowserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/web_page_buton_background"
+            android:layout_marginStart="8dp"
+            android:padding="15dp"
+            android:src="@drawable/download"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/GamePlayButton"
+            app:layout_constraintTop_toBottomOf="@+id/s_genre" />
+
+        <ImageButton
+            android:id="@+id/GamePlayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/web_page_buton_background"
+            android:padding="15dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/play"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/s_genre" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

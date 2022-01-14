@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "815854214028",
+    "project_id": "freegamesforum-711db",
+    "storage_bucket": "freegamesforum-711db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815854214028:android:308e7d3d9af5a2151654a9",
+        "android_client_info": {
+          "package_name": "com.example.free_games"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815854214028-315i0g3s10r4krhg13i8hka9dgjeo035.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.free_games",
+            "certificate_hash": "d768c93261ce1167e9b00012a1162b489755f631"
+          }
+        },
+        {
+          "client_id": "815854214028-l8lrtt66s66g5mv9e7npon20sihl6u85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIi_fv_mKIWeV2x9ioxzH5pBaDKztiuWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815854214028-l8lrtt66s66g5mv9e7npon20sihl6u85.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

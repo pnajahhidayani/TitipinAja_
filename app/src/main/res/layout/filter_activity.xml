@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:paddingBottom="30dp"
+        android:paddingLeft="10dp">
+    <LinearLayout
+        android:id="@+id/filter_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filters"
+            android:textSize="35dp"
+            android:textColor="@color/white"/>
+
+        <View
+            android:id="@+id/bg1"
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:background="@color/primary" />
+
+        <CheckBox
+            android:id="@+id/All"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="All"
+            android:buttonTint="@color/primary"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/ActionRPG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Action RPG"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/BattleRoyale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Battle Royale"
+            android:buttonTint="@color/primary"
+
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/CardGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Card Game"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Fantasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Fantasy"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/FightingGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Fighting"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/MMO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="MMO"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/MMORPG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="MMORPG"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/MOBA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="MOBA"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Racing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Racing"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/RPG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="RPG"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Shooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Shooter"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Social"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Sports"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/Strategy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Strategy"
+            android:buttonTint="@color/primary"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="Sort"
+            android:textSize="35dp"
+            android:textColor="@color/white"/>
+
+        <View
+            android:id="@+id/bg"
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:buttonTint="@color/primary"
+            android:background="@color/primary" />
+
+        <CheckBox
+            android:id="@+id/Newest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:buttonTint="@color/primary"
+            android:paddingVertical="30dp"
+            android:text="Newest"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+
+
+
+    </LinearLayout>
+
+        <Button
+            android:id="@id/FilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Apply"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filter_linear_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

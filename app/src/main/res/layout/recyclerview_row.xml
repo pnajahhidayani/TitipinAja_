@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="80dp"
+    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/game_type"-->
+<!--                android:layout_alignRight="@id/thumbnail"-->
+<!--                android:layout_alignBottom="@id/thumbnail"-->
+<!--                android:layout_marginRight="8dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:background="@drawable/game_type_background"-->
+<!--                android:gravity="center"-->
+<!--                android:padding="8dp"-->
+<!--                android:text="MMORPG"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="13sp" />-->
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/short_description"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="A free to play 3D online virtual world with a huge reputation! eneinein "
+            android:textSize="18dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:gravity="center"
+            android:background="#003B70"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/relative_layout"  />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
+
