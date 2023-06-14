@@ -93,14 +93,14 @@ class RegisterActivity : AppCompatActivity()
                     }
 
                     .addOnFailureListener{e ->
-                        Toast.makeText(this, "Regsitration failed: $e", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
                         progressDialog.dismiss()
                     }
             }
 
             .addOnFailureListener{ e->
                 progressDialog.dismiss()
-                Toast.makeText(this, "Regsitration failed: $e", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
             }
     }
 }

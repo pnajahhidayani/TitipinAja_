@@ -32,17 +32,17 @@ class RSSFragment : Fragment() {
         initRecyclerView()
 
         viewModel = ViewModelProviders.of(this).get(RSSViewModel::class.java)
-        viewModel.getRSSFeed().observe(viewLifecycleOwner, {
-            if (it != null)
-            {
-                RSSAdapter.setData(it)
-                RSSAdapter.notifyDataSetChanged()
-            }
-            else
-            {
-                Toast.makeText(context, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show()
-            }
-        })
+//        viewModel.getRSSFeed().observe(viewLifecycleOwner, {
+//            if (it != null)
+//            {
+//                RSSAdapter.setData(it)
+//                RSSAdapter.notifyDataSetChanged()
+//            }
+//            else
+//            {
+//                Toast.makeText(context, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show()
+//            }
+//        })
     }
 
     private fun initRecyclerView()

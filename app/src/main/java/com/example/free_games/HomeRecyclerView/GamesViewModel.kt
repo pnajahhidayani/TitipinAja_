@@ -3,7 +3,9 @@ package com.example.free_games.HomeRecyclerView
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.free_games.API.GMRetrofitInstance
+//import com.example.free_games.API.GMRetrofitInstance
+//import com.example.free_games.API.GMRetrofitInstance.apiService
+import com.example.free_games.models.BookResponse
 import com.example.free_games.models.GameModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,12 +22,12 @@ class GamesViewModel: ViewModel() {
         postlist2 = mutableListOf()
     }
 
-    fun getRecyclerListDataObserver(): MutableLiveData<List<GameModel>>
-    {
-        makeApiCall()
-        Log.e("Log", "home fetching data")
-        return data
-    }
+//    fun getRecyclerListDataObserver(): MutableLiveData<List<GameModel>>
+//    {
+//        makeApiCall()
+//        Log.e("Log", "home fetching data")
+//        return data
+//    }
 
     fun sortData(sort: Boolean)
     {
@@ -33,26 +35,41 @@ class GamesViewModel: ViewModel() {
         else { data.postValue(postlist1) }
     }
 
-    fun makeApiCall()
-    {
-        var API = GMRetrofitInstance.API
-        var call = API.posts
-        call.enqueue(object: Callback<List<GameModel>> {
-            override fun onResponse(call: Call<List<GameModel>>, response: Response<List<GameModel>>)
-            {
-                postlist1 = (response.body() as List<GameModel>).toMutableList()
-                postlist2 = (response.body() as List<GameModel>).toMutableList()
-                postlist1.shuffle()
-                data.postValue(postlist1)
-                postlist2.sortByDescending { it.release_date }
-//                randomizedListData.postValue(postlist2)
-            }
-            override fun onFailure(call: Call<List<GameModel>>, t: Throwable)
-            {
-                data.postValue(null)
-            }
-        })
-    }
+//    fun makeApiCall(){
+//        val call = apiService.searchBooks("Harry Potter")
+//        call.enqueue(object:Callback<BookResponse>, response: Response<BookSuccessful>) {
+//            val bookResponse = response.body()
+//            val books = bookResponse?.items
+//        } else {
+//
+//        }
+//    }
+//
+//    override fun onFailure(call: Call<BookResponse>, t:Throwable){
+//        Log.e(TAG, "Error: ${response.code()}")
+//
+//    }
+
+//    fun makeApiCall()
+//    {
+//        var API = GMRetrofitInstance.API
+//        var call = API.posts
+//        call.enqueue(object: Callback<List<GameModel>> {
+//            override fun onResponse(call: Call<List<GameModel>>, response: Response<List<GameModel>>)
+//            {
+//                postlist1 = (response.body() as List<GameModel>).toMutableList()
+//                postlist2 = (response.body() as List<GameModel>).toMutableList()
+//                postlist1.shuffle()
+//                data.postValue(postlist1)
+//                postlist2.sortByDescending { it.release_date }
+////                randomizedListData.postValue(postlist2)
+//            }
+//            override fun onFailure(call: Call<List<GameModel>>, t: Throwable)
+//            {
+//                data.postValue(null)
+//            }
+//        })
+
 }
 
 

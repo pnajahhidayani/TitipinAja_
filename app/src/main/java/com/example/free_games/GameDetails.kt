@@ -35,7 +35,7 @@ class GameDetails : AppCompatActivity()
             .error(R.drawable.ic_launcher_background)
         Glide.with(Context)
             .load(obj.thumbnail)
-            .into(binding.GameImage)
+            .into(binding.harry)
 
         binding.GameTitle.text = obj.title
         binding.GameShortDescription.text = obj.short_description
@@ -67,6 +67,19 @@ class GameDetails : AppCompatActivity()
                 startActivity(browserIntent)
             }
         }
+    }
+
+    private  fun shareData() {
+        val  textToShare = "contact"
+
+        val sendIntent = Intent()
+        sendIntent.action = Intent.ACTION_SEND
+        sendIntent.putExtra(Intent.EXTRA_TEXT, textToShare)
+        sendIntent.type = "text/plain"
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+
     }
 
     protected fun isAppInstalled(packageName: String?): Boolean {

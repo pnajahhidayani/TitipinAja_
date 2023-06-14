@@ -3,8 +3,13 @@ package com.example.free_games
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.iterator
+import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.example.free_games.Forum.Forum
 import com.example.free_games.R
+import com.example.free_games.RSSFeed.RSSFragment
 import com.example.free_games.ViewPagerAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,9 +30,14 @@ class MainActivity : AppCompatActivity() {
         prevMenuItem = BottomNavigationMenu.getMenu().getItem(0)
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
-            override fun onPageScrollStateChanged(state: Int) { }
+            override fun onPageScrollStateChanged(state: Int) {}
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) { }
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
 
             override fun onPageSelected(position: Int) {
                 if (prevMenuItem != null)
@@ -39,9 +49,6 @@ class MainActivity : AppCompatActivity() {
                 prevMenuItem = BottomNavigationMenu.getMenu().getItem(position);
             }
         })
-
-
-
 
         BottomNavigationMenu.setOnNavigationItemSelectedListener(
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -91,11 +98,13 @@ class MainActivity : AppCompatActivity() {
                 true
             })
 
-//        supportFragmentManager.addOnBackStackChangedListener {
-//            if (supportFragmentManager.backStackEntryCount == 0) {
-//                for (menuitem in BottomNavigationMenu.menu.iterator()) {
-//                    menuitem.isEnabled = true
-//                }
+        supportFragmentManager.addOnBackStackChangedListener {
+            if (supportFragmentManager.backStackEntryCount == 0) {
+                for (menuitem in BottomNavigationMenu.menu.iterator()) {
+                    menuitem.isEnabled = true
+                }
+            }
+        }
     }
 }
 

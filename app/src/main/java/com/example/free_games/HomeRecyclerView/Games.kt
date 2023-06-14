@@ -74,21 +74,22 @@ class Games : Fragment() {
         initRecyclerView()
 
         viewModel = ViewModelProviders.of(this).get(GamesViewModel::class.java)
-        viewModel.getRecyclerListDataObserver().observe(viewLifecycleOwner, {
-            if (it != null)
-            {
-                recycler_View.apply {recycler_View.adapter = GamesAdapter}
-                GamesAdapter.submitList(it)
-                GamesAdapter.notifyDataSetChanged()
-
-            }
-            else
-            {
-                Toast.makeText(activity, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show()
-            }
-        })
+//        viewModel.getRecyclerListDataObserver().observe(viewLifecycleOwner, {
+//            if (it != null)
+//            {
+//                recycler_View.apply {recycler_View.adapter = GamesAdapter}
+//                GamesAdapter.submitList(it)
+//                GamesAdapter.notifyDataSetChanged()
+//
+//            }
+//            else
+//            {
+//                Toast.makeText(activity, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show()
+//            }
+//        })
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
     {
         super.onActivityResult(requestCode, resultCode, data)

@@ -4,9 +4,14 @@ import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.os.Handler
+import android.os.Message
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.free_games.R
 import com.example.free_games.databinding.ActivityAddPostBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -20,7 +25,8 @@ import kotlin.collections.HashMap
 class AddPostActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddPostBinding
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressBar: ProgressBar
+    private  lateinit var  messageTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,15 +36,35 @@ class AddPostActivity : AppCompatActivity() {
         binding.buttonPost.setOnClickListener{
            AddPostToFireStore()
         }
+
+        progressBar = findViewById(R.id.progressBar)
+        messageTextView = findViewById(R.id.messageTextView)
+
+        showMessage("Loading..")
+        showProgressBar()
+    }
+
+    private fun showProgressBar() {
+        progressBar.visibility = View.VISIBLE
+    }
+
+    private fun hideProgressBar() {
+        progressBar.visibility = View.GONE
+    }
+
+    private fun showMessage(message: String) {
+        messageTextView.text = message
+        messageTextView.visibility = View.VISIBLE
     }
 
     fun AddPostToFireStore()
     {
-        progressDialog = ProgressDialog(this)
+        val progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
         progressDialog.setMessage("Posting Content")
-        progressDialog.setCanceledOnTouchOutside(false)
+        progressDialog.setCancelable(false)
         progressDialog.show()
+        progressDialog.dismiss()
 
         var username: String? = null
         val DB = FirebaseFirestore.getInstance()
