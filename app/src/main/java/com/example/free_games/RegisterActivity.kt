@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.TextUtils
 import android.util.Patterns
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.free_games.databinding.ActivitySignUpBinding
@@ -17,7 +20,8 @@ import kotlinx.android.synthetic.main.activity_add_post.*
 class RegisterActivity : AppCompatActivity()
 {
     lateinit var binding: ActivitySignUpBinding
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressBar: ProgressBar
+    private lateinit var messageTextView: TextView
     private lateinit var firebaseAuth: FirebaseAuth
     private var email = ""
     private var username = ""
@@ -30,11 +34,14 @@ class RegisterActivity : AppCompatActivity()
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        progressBar = findViewById(R.id.progressBar)
+        messageTextView = findViewById(R.id.messageTextView)
 
-        progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please Wait")
-        progressDialog.setMessage("Creating Account")
-        progressDialog.setCanceledOnTouchOutside(false)
+
+//        progressDialog = ProgressDialog(this)
+//        progressDialog.setTitle("Please Wait")
+//        progressDialog.setMessage("Creating Account")
+//        progressDialog.setCanceledOnTouchOutside(false)
 
         binding.buttonSignUp.setOnClickListener{
             validateData()
@@ -66,9 +73,8 @@ class RegisterActivity : AppCompatActivity()
         }
     }
 
-    private fun firebaseSignUp()
-    {
-        progressDialog.show()
+    private fun firebaseSignUp(){
+        progressBar.visibility = View.GONE
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 val UserData: MutableMap<String, Any> = HashMap()
@@ -79,11 +85,10 @@ class RegisterActivity : AppCompatActivity()
                     .document(firebaseAuth.currentUser!!.uid)
                     .set(UserData)
                     .addOnSuccessListener {
-
-                        progressDialog.dismiss()
+                        progressBar.visibility = View.GONE
 
                         val snackbar = Snackbar
-                            .make(coordinator, "Registration sucesfull", Snackbar.LENGTH_LONG)
+                            .make(coordinator, "Registration successful", Snackbar.LENGTH_LONG)
                         snackbar.show()
 
                         val handler = Handler()
@@ -92,15 +97,53 @@ class RegisterActivity : AppCompatActivity()
                         }, 1500)
                     }
 
-                    .addOnFailureListener{e ->
+                    .addOnFailureListener{ e ->
                         Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
-                        progressDialog.dismiss()
+                        progressBar.visibility = View.GONE
                     }
             }
 
-            .addOnFailureListener{ e->
-                progressDialog.dismiss()
+            .addOnFailureListener { e ->
+                progressBar.visibility = View.GONE
                 Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
+
             }
     }
+//    private fun firebaseSignUp()
+//    {
+//        progressDialog.show()
+//        firebaseAuth.createUserWithEmailAndPassword(email, password)
+//            .addOnSuccessListener {
+//                val UserData: MutableMap<String, Any> = HashMap()
+//                UserData["username"] = username
+//
+//                val DB = FirebaseFirestore.getInstance()
+//                DB.collection("Users")
+//                    .document(firebaseAuth.currentUser!!.uid)
+//                    .set(UserData)
+//                    .addOnSuccessListener {
+//
+//                        progressDialog.dismiss()
+//
+//                        val snackbar = Snackbar
+//                            .make(coordinator, "Registration sucesfull", Snackbar.LENGTH_LONG)
+//                        snackbar.show()
+//
+//                        val handler = Handler()
+//                        handler.postDelayed({
+//                            finish()
+//                        }, 1500)
+//                    }
+//
+//                    .addOnFailureListener{e ->
+//                        Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
+//                        progressDialog.dismiss()
+//                    }
+//            }
+//
+//            .addOnFailureListener{ e->
+//                progressDialog.dismiss()
+//                Toast.makeText(this, "Registration failed: $e", Toast.LENGTH_SHORT).show()
+//            }
+//    }
 }

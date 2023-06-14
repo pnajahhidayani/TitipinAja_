@@ -19,7 +19,7 @@
             android:iconifiedByDefault="true"
             android:background="@color/primary"
             app:theme="@style/SearchViewStyle"
-            android:queryHint="Search For Games..."
+            android:queryHint="What are you looking for..."
             app:searchIcon="@drawable/search"
             app:closeIcon="@drawable/search" />
 

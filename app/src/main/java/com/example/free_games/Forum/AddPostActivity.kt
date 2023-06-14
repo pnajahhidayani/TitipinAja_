@@ -45,7 +45,7 @@ class AddPostActivity : AppCompatActivity() {
     }
 
     private fun showProgressBar() {
-        progressBar.visibility = View.VISIBLE
+        progressBar.visibility = View.INVISIBLE
     }
 
     private fun hideProgressBar() {

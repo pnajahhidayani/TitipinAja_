@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.free_games.databinding.FragmentLoginBinding
@@ -14,7 +17,8 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity()
 {
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressBar: ProgressBar
+    private lateinit var messageTextView: TextView
     private lateinit var firebaseAuth: FirebaseAuth
     lateinit var binding: FragmentLoginBinding
     private var email = ""
@@ -25,16 +29,25 @@ class LoginActivity : AppCompatActivity()
         binding = FragmentLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please Wait")
-        progressDialog.setMessage("Loging in")
-        progressDialog.setCanceledOnTouchOutside(false)
+        progressBar = findViewById(R.id.progressBar)
+        messageTextView = findViewById(R.id.messageTextView)
+
+//        showMessage("Loading..")
+//        showProgressBar()
 
         firebaseAuth = FirebaseAuth.getInstance()
 
         loadUI()
         return
     }
+
+//    private fun showProgressBar(){
+//        progressBar.visibility = View.VISIBLE
+//    }
+//
+//    private fun hideProgressBar() {
+//        progressBar.visibility = View.GONE
+//    }
 
     private fun loadUI()
     {
@@ -69,17 +82,29 @@ class LoginActivity : AppCompatActivity()
 
     private fun firebaseLogin()
     {
-        progressDialog.show()
+        progressBar.visibility = View.GONE
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                progressDialog.dismiss()
-                Toast.makeText(this, "Login is sucessfull", Toast.LENGTH_SHORT).show()
+                progressBar.visibility = View.GONE
+                Toast.makeText(this, "Login is successful", Toast.LENGTH_SHORT).show()
                 finish()
             }
-            .addOnFailureListener{e ->
-                progressDialog.dismiss()
+            .addOnFailureListener { e ->
+                progressBar.visibility = View.GONE
                 Log.d("Log", e.toString())
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
             }
+//        progressbar.show()
+//        firebaseAuth.signInWithEmailAndPassword(email, password)
+//            .addOnSuccessListener {
+//                progressDialog.dismiss()
+//                Toast.makeText(this, "Login is sucessfull", Toast.LENGTH_SHORT).show()
+//                finish()
+//            }
+//            .addOnFailureListener{e ->
+//                progressDialog.dismiss()
+//                Log.d("Log", e.toString())
+//                Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+//            }
     }
 }
